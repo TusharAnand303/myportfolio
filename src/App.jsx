@@ -1,14 +1,41 @@
+import { useState, useEffect } from 'react';
+import MainPage from './components/MainPage';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 5000);
+  // }, []);
+
+  const LoadingState = () => {
+    return (
+      <div class="wrapper flex h-screen justify-center items-center">
+      <div className='flex flex-col items-center justify-center w-[380px] '>
+        <svg>
+          <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+            Tushar Anand
+          </text>
+        </svg>
+        <svg className='-mt-[100px]'>
+          <text className='text2' x="50%" y="50%" dy=".35em" text-anchor="middle">
+            Full Stack Web Developer
+          </text>
+        </svg>
+      </div>
+    </div>
+    
+    );
+  };
 
   return (
     <>
-       <h1 className="text-3xl font-bold underline">
-      Hello world! tushar anand tailwind css working 
-    </h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, doloribus! Dicta maxime fugit, at velit iusto quidem inventore minus officiis. Sint minus iure placeat quisquam soluta optio id exercitationem quos veritatis eligendi vel sunt, delectus adipisci, alias dolores ipsum inventore!</p>
+      {loading ? <LoadingState /> : <MainPage />}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
