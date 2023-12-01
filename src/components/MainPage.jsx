@@ -1,10 +1,13 @@
 import React from 'react'
+import myAvatar from '../assets/myavatar.png'
+import Navbar from './Navbar'
 
 const MainPage = () => {
   return (
-    <div className='bg-[#2C3532] text-[#fff] text-5xl font-bold '>
-      Main Page
-    </div>
+    <>
+    <Navbar/>
+    
+    </>
   )
 }
 
